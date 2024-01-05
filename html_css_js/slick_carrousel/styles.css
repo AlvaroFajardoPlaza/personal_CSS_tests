@@ -1,0 +1,85 @@
+/* PRUEBA DE IMPORT DESDE GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;900&display=swap');
+
+
+@font-face {
+    font-family: "italiana";
+    src: url("./assets/fonts/Italiana-Regular.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "wagon";
+    src: url("./assets/fonts/Wagon-Bold.otf") format("otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ESTILOS DE FUENTE PARA CADA TAG */
+h1, h3 {
+    font-weight: 700;
+    font-family: 'Rubik', sans-serif;
+}
+
+h1:hover, h3:hover {
+    font-weight: 900;
+    color: red;
+}
+
+/* PRUEBA DE @FONT-FACE */
+p {
+    font-family: "wagon";
+    font-weight: normal;
+}
+
+.naming_italiana {
+    font-family: "italiana";
+    font-weight: normal;
+    font-size: 1.4rem;
+    -webkit-text-stroke-color: rgb(242, 242, 242);
+    -webkit-text-stroke-width: 1px;
+}
+
+
+
+
+.carrousel_test {
+    background-color: rgba(0, 255, 255, 0.2);
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border: 3px solid aqua;
+    padding: 3rem
+}
+
+.slick-prev.slick-arrow{
+    z-index: 1;
+    /* color: red; */
+    background-color: red;
+    left: 25px;
+}
+
+.slick-prev.slick-arrow::before, .slick-next.slick-arrow::before{
+    background-color: blue;
+}
+
+
+.slick-next.slick-arrow{
+    z-index: 1;
+    background-color: red;
+    right: 25px;
+}
+
+/* ESTILOS DEL SEGUNDO CARROUSEL */
+ul.slick-dots {
+    z-index: 1;
+    bottom: 120px;
+}
+
+.slick-dots li {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.slick-dots li button {
+    color: white;
+}

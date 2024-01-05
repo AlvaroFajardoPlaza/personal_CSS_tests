@@ -1,0 +1,175 @@
+@font-face {
+    font-family: "newyork";
+    src: url("./fonts/newyork.otf") format("otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "baseNeue";
+    src: url("./fonts/BaseNeueTrial-ExpSemBd.otf") format("otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* CREAMOS LOS COLORES PRINCIPALES DENTRO DE NUESTRO ROOT: */
+/* @PROPERTY para crear nuestra variable personalizada de gradiente animado*/
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
+:root {
+    --clr-0: #101010;
+    --clr-1: #250084;
+    --clr-2: #3106a0;
+    --clr-3: #b411d0;
+    --clr-4: #e41a68;
+}
+
+h1 {
+    font-family: "newyork";
+    /* -webkit-text-stroke: 1px white; */
+}
+
+p {
+    font-family: "baseNeue", Helvetica, sans-serif;
+}
+
+.main-container {
+    background-color: var(--clr-0);
+	/* background: linear-gradient(-45deg, #181818, #700830, #150147, #00011e); */
+	/* background-size: 200% 200%;
+	animation: gradient 10s ease infinite; */
+	height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:3rem;
+}
+
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
+.my_glowing_card {
+    /* z-index: 1; */
+    background-color: white;
+    aspect-ratio: 1 / 1.5;
+    height: 60dvh;
+    border-radius: 1rem;
+
+    position: relative;
+}
+
+/* Los pseudoelementos ::before y ::after funcionan como un "span"
+Crean elementos hijos del padre al que se aplican.
+Sirven como mero valor estético! Siempre necesitan definir el "content:" */
+.my_glowing_card::after,
+.my_glowing_card::before {
+    opacity: 0.88;
+    content: "";
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        var(--gradient-angle),
+        var(--clr-1),
+        var(--clr-3));
+    background-size: 150% 150%;
+    animation: rotation 10s linear infinite;
+    filter: blur(0.4rem);
+}
+
+
+@keyframes rotation {
+    0% {
+        --gradient-angle: 0deg;
+    }
+
+    100% {
+        --gradient-angle: 720deg;
+    }
+}
+
+/* .my_glowing_card::after {
+    z-index:0;
+    filter: blur(2rem);
+} */
+
+.content_card {
+    color: white;
+    background-color: rgb(7, 7, 7, 0.88);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* inset: 0.4rem; */
+    z-index: 99;
+    border-radius: inherit;
+}
+
+
+/* //////////////////////////////// */
+/* GLOWING CARD 2 */
+@property --a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+.glowing_card_02 {
+    z-index: 0;
+    position: relative;
+    height: 60dvh;;
+    aspect-ratio: 1 / 1.5;
+    border-radius: 1rem;
+    background: repeating-conic-gradient(from var(--a), #e41a68 0%, #e41a68 5%, transparent 5%, transparent 40%, #e41a68 50%);
+    animation: animate 3s linear infinite;
+    /* filter:blur(0.2rem) */
+   
+}
+
+.glowing_card_02 >* {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes animate {
+    0% { --a: 0deg}
+    100% { --a: 360deg}
+}
+
+.glowing_card_02::before {
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: repeating-conic-gradient(from var(--a), #250084 0%, #250084 5%, transparent 5%, transparent 40%, #250084 50%);
+    animation: animate 6s linear infinite;
+    /* animation-delay: 1s; */
+}
+
+.glowing_card_02::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    background-color: #000000;
+    border: 0.6rem solid var(--clr-0);
+    inset:8px;
+}
+
+/* h1, p{
+    position: relative;
+    z-index: 1;
+} */

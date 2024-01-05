@@ -1,0 +1,191 @@
+@font-face {
+    font-family: "jelly";
+    src: url("./fonts/jellyFruit.ttf") format("ttf");
+    font-weight: "normal";
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "melody";
+    src: url("./fonts/MelodySouthern.otf") format("otf");
+    font-weight: "normal";
+    font-style: normal;
+}
+
+h3, p {
+    font-family: "melody", sans-serif;
+    font-weight: normal;
+}
+
+
+.my_grid {
+    display: grid;
+    /* row-gap: 20px;
+    column-gap: 20px; */
+    gap: 20px;
+    justify-content: space-between;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+    grid-auto-rows: 100px; /* Crea nuevas rows siempre con el tamaño 100px */
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    border: 3px solid black;
+    overflow: hidden;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 0);
+    align-self: center;
+    border: 2px solid lightcoral;
+    width: 100%;
+    height: 100%;
+}
+
+.item-1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+/* EMPLEANDO LA KEYWORD SPAN: */
+.item-2 {
+    grid-column: span 2;
+}
+
+.item-3 {
+    grid-row: 4/6;
+    grid-column: 3/6;
+}
+
+.item-4 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+.item-7 {
+    grid-row: 4/6;
+    grid-column: -4/-6;
+}
+
+/* EMPLEO DE GRID-AREA: row-start / col-start / row-end / col-end */
+.item-8 {
+    grid-area: 6/2/8/-2
+}
+
+.item-9 {
+    z-index:1;
+    grid-area: 5/2/7/4;
+}
+
+
+/* A PARTIR DE AQUÍ EMPEZAMOS CON EL SEGUNDO GRID --> */
+
+/* Creación de variables que luego se llaman en la clase como css-rule: var(--main--...) */
+:root {
+    --main--border--radius: 0.6rem;
+    --main--border--color: 1px solid rgb(255, 255, 255);
+    --main--box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+}
+
+#example_2 {
+    font-family: Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color:white;
+    font-weight: 700;
+}
+
+.my_grid_2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 5.4fr 4fr 3fr 2.6fr;
+        grid-auto-rows: 1fr;
+        gap: 0.4rem;
+        grid-template-areas:
+            "nav nav nav nav"
+            "sidebar main main main"
+            "sidebar content1 content2 content3"
+            "sidebar section section section"
+            "footer footer footer footer";
+}
+
+.elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--main--border--radius);
+    border: var(--main--border--color);
+    box-shadow: var(--main--box-shadow);
+}
+
+.nav {
+    background-color: aqua;
+    grid-area: nav;
+}
+.sidebar {
+    background-color: rgb(13, 179, 143);
+    grid-area: sidebar;
+}
+.main {
+    background-color: aquamarine;
+    grid-area: main;
+}
+.content_1 {
+    background-color: rgb(62, 255, 187);
+    grid-area: content1;
+}
+.content_2 {
+    background-color: rgb(135, 255, 213);
+    grid-area: content2;
+}
+.content_3 {
+    background-color: rgb(150, 255, 218);
+    grid-area: content3;
+}
+.section {
+    background-color: rgb(62, 255, 236);
+    grid-area: section;
+}
+.footer {
+    background-color: rgb(62, 216, 255);
+    grid-area: footer;
+}
+
+/* TABLET MEDIA QUERY */
+@media only screen and (min-width: 481px) and (max-width: 1100px) {
+    .my_grid_2 {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 3fr 2fr 2fr 2fr;
+        grid-auto-rows: 1fr;
+        grid-template-areas: 
+            "nav nav nav nav nav"
+            "sidebar main main main main"
+            "sidebar content1 content1 content2 content3"
+            "sidebar section section section section"
+            "footer footer footer footer footer";
+    }
+}
+
+/* PHONE MEDIA QUERY */
+@media only screen and (max-width: 480px) {
+    .my_grid_2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.2fr 100dvh 6fr 6fr 6fr 4fr 100dvh;
+        grid-auto-rows: 2fr;
+        grid-template-areas: 
+            "nav"
+            "sidebar"
+            "main"
+            "content1"
+            "content2"
+            "content3"
+            "section"
+            "footer"
+            ;
+    }
+}
+

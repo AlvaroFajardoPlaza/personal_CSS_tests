@@ -1,0 +1,88 @@
+#david_lottie {
+  border: 2px solid red;
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+main {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.my_personal_button {
+    color: #eeeeee;
+    background-color: #101010;
+    border: 2px solid rgb(216, 2, 134);
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #D80286;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+  }
+
+.my_personal_button:hover {
+    box-shadow: inset 400px 50px 0 0 #D80286;
+  }
+
+.my_glass_button {
+  display: inline-block;
+   padding: 0.8rem;
+   border: 0;
+   text-decoration: none;
+   border-radius: 2rem;
+   background-color: rgba(255,255,255,0.1);
+   border: 1px solid rgba(255,255,255,0.2);
+   backdrop-filter: blur(15px);
+   color: rgba(255,255,255,0.8);
+   font-size: 14px;
+   letter-spacing: 0.04rem;
+   cursor: pointer;
+   text-transform: uppercase;
+   transition: background-color 0.3s ease-in;
+}
+
+.my_glass_button:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.happy_froggy_container {
+    border-radius: 5rem;
+    border: 2px solid red;
+    width: 40%;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.happy_frog_01 {
+    width:100%;
+    margin: -1rem;
+}
+
+.astronaut_image_container {
+  width: 100%;
+  overflow: hidden;
+}
+
+._astronaut_ {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.parallax-effect {
+    /* The image used */
+    background-image: url("https://images.unsplash.com/photo-1541873676-a18131494184?q=80&w=2036&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+
+    /* Set a specific height */
+    min-height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
