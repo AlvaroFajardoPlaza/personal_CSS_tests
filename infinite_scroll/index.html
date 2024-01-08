@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inifinite Scroll Component</title>
+    
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+     <!-- BOOTSTRAP Y FONTAWESOME-->
+     <!-- <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+     crossorigin="anonymous"
+   /> -->
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+     crossorigin="anonymous"
+   />
+
+</head>
+<body>
+   <h1 class="title">Infinite Scroll</h1>
+
+   <div class="prueba_container">
+    <h3>1º Prueba</h3>
+    <p class="description">En esta primera prueba, el infinite scroll repite código dentro de la plantilla HTML así que no es la mejor aplicación, pero se pueden estudiar los estilos aplicados y la animación generada desde el CSS.</p>
+        <div class="scroll" style="--time:20s;">
+            <div>
+                <span>HTML</span>
+                <span>JAVASCRIPT</span>
+                <span>PYTHON</span>
+                <span>REACT</span>
+                <span>ANGULAR</span>
+                <span>TYPESCRIPT</span>
+                <span>CSS</span>
+                <span>PHOTOSHOP</span>
+                <span>ILLUSTRATOR</span>
+                <span>DJANGO</span>
+            </div>
+            <div>
+                <span>HTML</span>
+                <span>JAVASCRIPT</span>
+                <span>PYTHON</span>
+                <span>REACT</span>
+                <span>ANGULAR</span>
+                <span>TYPESCRIPT</span>
+                <span>CSS</span>
+                <span>PHOTOSHOP</span>
+                <span>ILLUSTRATOR</span>
+                <span>DJANGO</span>
+            </div>
+        </div>
+        <div class="scroll" style="--time:25s;">
+            <div>
+                <span>HTML</span>
+                <span>JAVASCRIPT</span>
+                <span>PYTHON</span>
+                <span>REACT</span>
+                <span>ANGULAR</span>
+                <span>TYPESCRIPT</span>
+                <span>CSS</span>
+                <span>PHOTOSHOP</span>
+                <span>ILLUSTRATOR</span>
+                <span>DJANGO</span>
+            </div>
+            <div>
+                <span>HTML</span>
+                <span>JAVASCRIPT</span>
+                <span>PYTHON</span>
+                <span>REACT</span>
+                <span>ANGULAR</span>
+                <span>TYPESCRIPT</span>
+                <span>CSS</span>
+                <span>PHOTOSHOP</span>
+                <span>ILLUSTRATOR</span>
+                <span>DJANGO</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEGUNDA PRUEBA DEL INFINITE SCROLL -->
+    <div class="prueba_container">
+        <h3>2º Prueba</h3>
+        <p class="description">Segunda prueba de Infinite Scroll. Estilos de CSS y animación modificados. Pero estructura HTML duplicada.</p>
+            <div class="logos">
+                <div class="logos__scroll">
+                    <img src="./assets/fajardo_logo_01.png" />
+                    <img src="./assets/alien-emoji-02.png" />
+                    <img src="./assets/fajardo_logo_01.png" />
+                    <img src="./assets/alien-emoji-02.png" />
+                    <img src="./assets/fajardo_logo_01.png" />
+                    <img src="./assets/alien-emoji-02.png" />
+                    <img src="./assets/fajardo_logo_01.png" />
+                    <img src="./assets/alien-emoji-02.png" />
+                </div>
+                <div class="logos__scroll">
+                    <img src="./assets/fajardo_logo_01.png" />
+                    <img src="./assets/alien-emoji-02.png" />
+                    <img src="./assets/fajardo_logo_01.png" />
+                    <img src="./assets/alien-emoji-02.png" />
+                    <img src="./assets/fajardo_logo_01.png" />
+                    <img src="./assets/alien-emoji-02.png" />
+                    <img src="./assets/fajardo_logo_01.png" />
+                    <img src="./assets/alien-emoji-02.png" />
+                </div>
+            </div>
+    </div>
+
+    <!-- A PARTIR DE AQUÍ LA PRUEBA PARA EL TERCER SCROLLER -->
+    <div class="prueba_container">
+        <h3>3º Prueba</h3>
+        <p class="description">Tercera prueba de Infinite Scroll.</p>
+            <div class="scroller__03" data-direction="left">
+                <div class="__boos__div">
+                    <img src="./assets/boo_01.png" />
+                    <img src="./assets/boo_02.png" />
+                    <img src="./assets/boo_01.png" />
+                    <img src="./assets/boo_02.png" />
+                    <img src="./assets/boo_01.png" />
+                    <img src="./assets/boo_02.png" />
+                </div>
+            </div>
+
+            <!-- REVERSED -->
+            <div class="scroller__03" data-direction="right">
+                <div class="__boos__div">
+                    <img src="./assets/boo_01.png" />
+                    <img src="./assets/boo_02.png" />
+                    <img src="./assets/boo_01.png" />
+                    <img src="./assets/boo_02.png" />
+                    <img src="./assets/boo_01.png" />
+                    <img src="./assets/boo_02.png" />
+                </div>
+            </div>
+    </div>
+
+
+    <!-- A PARTIR DE AQUÍ LA CUARTA PRUEBA CON TEXTO -->
+    <div class="prueba_container">
+        <h3>3º Prueba</h3>
+        <p class="description">Cuarta prueba con texto dentro del Scroll</p>
+            <div class="scroller__04">
+                <div class="inner__scroll">
+                    <span class="new__text">NEW</span>
+                    <span class="knowledge__text">KNOWLEDGE</span>
+                    <span class="new__text">NEW</span>
+                    <span class="knowledge__text">KNOWLEDGE</span>
+                    <span class="new__text">NEW</span>
+                    <span class="knowledge__text">KNOWLEDGE</span>
+                    <span class="new__text">NEW</span>
+                    <span class="knowledge__text">KNOWLEDGE</span>
+                </div>
+            </div>
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

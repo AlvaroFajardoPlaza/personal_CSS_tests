@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(26, 26, 26);
+    color: rgb(233, 233, 233);
+    font-size: 1.2rem;
+    /* letter-spacing: .14rem; */
+    /* text-align: center; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100dvh; */
+}
+
+.prueba_container {
+    border: 1px solid rgb(200, 200, 200);
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 90%;
+}
+
+.title {
+    margin: 2rem;
+    font-weight: 200;
+}
+
+.description {
+    margin: 1rem 4rem 1rem 4rem;
+    line-height: 2.6rem;
+}
+
+/* NOS METEMOS A TRABAJAR DENTRO DE LA CLASE SCROLL */
+.scroll {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #FFF, #FFF, transparent 80%);
+}
+
+/* DENTRO DE NUESTRO SCROLL DIV SETTEAMOS NUESTRA ANIMACIÓN */
+.scroll div {
+    white-space: nowrap;
+    animation: my_scroll_01 var(--time) linear infinite;
+}
+
+.scroll div:nth-child(2) {
+    animation: my_scroll_02 var(--time) linear infinite;
+    animation-delay: calc(var(--time) * -1);
+}
+
+@keyframes my_scroll_01 {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes my_scroll_02 {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.scroll div span {
+    display: inline-flex;
+    margin: 4px;
+    padding: 12px;
+    background-color: rgb(15, 15, 15);
+    border: .4px solid #FFF;
+    border-radius: .6rem;
+}
+
+.scroll div span:hover {
+    background-color: rgb(40, 40, 40);
+    box-shadow: 0px 0px 2px 4px #ffffff10;
+    cursor: pointer;
+}
+
+
+
+/* ------------------------------------------------------------- */
+/* 2º PRUEBA DE INFINITE SCROLL */
+
+@keyframes scroll_02_animate {
+    from {
+        transform: translateX(0%)
+    }
+
+    to {
+        transform: translateX(calc(-100% - .5rem))
+    }
+}
+
+.logos {
+    /* background-color: rgba(240, 248, 255, 0.044); */
+    overflow: hidden;
+    padding: 1rem 0;
+    white-space: nowrap;
+
+    -webkit-mask: linear-gradient(90deg, transparent, #FFF, #FFF, transparent);
+    mask: linear-gradient(90deg, transparent, #FFF, #FFF, transparent);
+}
+
+.logos:hover .logos__scroll {
+    animation-play-state: paused;
+}
+
+.logos__scroll {
+    animation: scroll_02_animate 20s linear infinite;
+    display: inline-block;
+}
+
+.logos__scroll img {
+    width: 100px;
+    margin: 0 1rem;
+}
+
+
+/* ------------------------------------------------------
+TERCERA PRUEBA DE INFINITE SROLL */
+.scroller__03 {
+    white-space: nowrap;
+    /* overflow: hidden; */
+}
+
+.scroller__03[data-animated="true"] {
+    border: 2px solid rgba(230, 230, 230, 0.1);
+    overflow: hidden;
+
+    /* Necesitamos del webkit y de la mask normal para considerar distintos browsers... */
+    /* Lo colocamos aquí porque la máscara solo se activa si lleva la propiedad de data-animated */
+    -webkit-mask:
+        linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask:
+        linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller__03[data-animated="true"] .__boos__div {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation:
+        scroller_03_boos var(--animation-duration, 30s) var(--animation-direction, forwards) linear infinite;
+}
+
+.scroller__03[data-direction="right"] {
+    --animation-direction: reverse;
+}
+
+.scroller__03[data-direction="left"] {
+    --animation-direction: forwards;
+}
+
+@keyframes scroller_03_boos {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+.__boos__div {
+    display: flex;
+    gap: .4rem;
+    flex-wrap: wrap;
+}
+
+.__boos__div img {
+    height: 100px;
+    margin: 1rem 0;
+    padding: 1rem;
+    /* border: .6px solid #323232; */
+}
+
+
+/* ------------------------------------------------------
+CUARTA PRUEBA DEL INFINITE SROLL CON TEXTO */
+.scroller__04 {
+    border: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.inner__scroll {
+    display: flex;
+    gap: .4rem;
+    animation: text__scroller 20s linear infinite;
+}
+
+@keyframes text__scroller {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.inner__scroll:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+
+/* ESTILOS PARA EL TEXTO... */
+.inner__scroll span {
+    font-size: 2.6rem;
+    font-weight: 900;
+}
+
+.inner__scroll span.new__text {
+    color: white;
+}
+
+.inner__scroll span.knowledge__text {
+    color: rgba(38, 38, 38, 0);
+    -webkit-text-stroke: .8px #FFF;
+
+}
