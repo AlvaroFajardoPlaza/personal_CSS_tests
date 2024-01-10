@@ -1,8 +1,13 @@
+@font-face {
+    font-family: "newake";
+    src: url("./assets/Newake-Font-Demo.otf") format("otf");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
+    font-family: "newake", Helvetica, sans-serif;
 }
 
 body {
@@ -192,10 +197,14 @@ TERCERA PRUEBA DE INFINITE SROLL */
 /* ------------------------------------------------------
 CUARTA PRUEBA DEL INFINITE SROLL CON TEXTO */
 .scroller__04 {
-    border: 2px solid white;
+    border: 1px solid white;
     white-space: nowrap;
     overflow: hidden;
     padding: 1rem 0;
+
+    -webkit-mask-image: linear-gradient(90deg, transparent 20%, white, white, transparent 80%);
+    mask: linear-gradient(90deg, transparent 10%, white, white, transparent 90%);
+
 }
 
 .inner__scroll {
@@ -215,19 +224,24 @@ CUARTA PRUEBA DEL INFINITE SROLL CON TEXTO */
     cursor: pointer;
 }
 
-
 /* ESTILOS PARA EL TEXTO... */
 .inner__scroll span {
-    font-size: 2.6rem;
+    font-size: 4rem;
     font-weight: 900;
+    letter-spacing: .05rem;
 }
 
 .inner__scroll span.new__text {
     color: white;
 }
 
+.inner__scroll:hover .new__text {
+    color: red;
+}
+
+
 .inner__scroll span.knowledge__text {
     color: rgba(38, 38, 38, 0);
-    -webkit-text-stroke: .8px #FFF;
+    -webkit-text-stroke: 0.2px #cacaca;
 
 }
