@@ -30,9 +30,57 @@
 }
 
 body {
-    background-color: var(--clr-dark);
+    background: linear-gradient(144deg, #050132, #0c0514);
+    background-size: 400% 400%;
+
+    -webkit-animation: backgroundAnimation 8s ease infinite;
+    -moz-animation: backgroundAnimation 8s ease infinite;
+    animation: backgroundAnimation 5s ease infinite;
+
     height: 100dvh;
     overflow: hidden;
+}
+
+@-webkit-keyframes backgroundAnimation {
+    0% {
+        background-position: 4% 0%
+    }
+
+    50% {
+        background-position: 97% 100%
+    }
+
+    100% {
+        background-position: 4% 0%
+    }
+}
+
+@-moz-keyframes backgroundAnimation {
+    0% {
+        background-position: 4% 0%
+    }
+
+    50% {
+        background-position: 97% 100%
+    }
+
+    100% {
+        background-position: 4% 0%
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 4% 0%
+    }
+
+    50% {
+        background-position: 97% 100%
+    }
+
+    100% {
+        background-position: 4% 0%
+    }
 }
 
 /* PRUEBAS TIPOGRÁFICAS -------------------------
@@ -64,8 +112,8 @@ span {
 A PARTIR DE ESTE PUNTO VAN LOS ESTILOS PARA LAS TRES SECCIONES */
 .wrapper {
 
-    /* Como tengo 4 secciones principales, la width serán 400% */
-    width: 400%;
+    /* Como tengo 5 secciones principales, la width serán 400% */
+    width: 500%;
     height: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -79,7 +127,7 @@ A PARTIR DE ESTE PUNTO VAN LOS ESTILOS PARA LAS TRES SECCIONES */
     top: 30%;
     left: 4rem;
 
-    font-size: 8rem;
+    font-size: 7.4rem;
     line-height: 6.8rem;
     letter-spacing: 0.02rem;
     color: rgb(0, 0, 0);
@@ -87,9 +135,10 @@ A PARTIR DE ESTE PUNTO VAN LOS ESTILOS PARA LAS TRES SECCIONES */
 }
 
 .logo span:hover {
-    /* color: red; */
+    color: white;
     cursor: pointer;
 }
+
 
 .line {
     background-color: rgb(151, 0, 0);
@@ -154,15 +203,21 @@ section.character::before {
     background-color: rgb(9, 14, 88);
 }
 
+.bowser::before,
+.bowser .block {
+    background-color: rgb(49, 0, 4);
+}
+
 .caption {
     bottom: 4rem;
     left: 4rem;
     position: absolute;
-    width: 24%;
+    z-index: 15;
+    width: 30%;
 
     font-family: "creato", Helvetica, sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
+    font-size: 1.15rem;
+    line-height: 1.6rem;
     font-weight: 300;
     color: #f6f6f6;
     text-shadow: var(--text-shadow);
@@ -173,10 +228,10 @@ section.character::before {
 .character img {
     position: relative;
     z-index: 10;
-    height: 74dvh;
+    height: 18dvh;
     width: auto;
 
-    transform: translateY(-100%);
+    transform: translateY(-300%);
     transition: height 1.5s ease-out, width 3s ease-out;
 }
 

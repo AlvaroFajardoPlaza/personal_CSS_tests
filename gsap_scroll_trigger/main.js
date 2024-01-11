@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Animación de sroll sobre el logo
     gsap.to('.logo', {
-        fontSize: '3rem',
-        lineHeight: '2.6rem',
+        fontSize: '2.4rem',
+        lineHeight: '2.2rem',
         top: '4rem',
         scrollTrigger: {
             trigger: '.logo',
             start: 'top top',
-            end: 1500,
+            end: 1000,
             scrub: 0.5,
         }
     })
@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
         gsap.to(elem.querySelector('img'), {
+            height: '80dvh',
             y: 0, 
             ease: 'none',
             scrollTrigger: {
